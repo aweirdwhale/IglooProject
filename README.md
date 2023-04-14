@@ -3,7 +3,7 @@
 #### Auteurs
 
 - [Claire](https://github.com/mrroboobs)
-- [Olivier]('https://github.com/aweirdwhale')
+- [Olivier](https://github.com/aweirdwhale)
 
 
 ## Quoi?
