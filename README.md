@@ -16,7 +16,7 @@
 * [x]  Faire les designs
 * [x]  Interface d'accueil
 * [ ]  Faire le premier jeu
-* [ ]  Choix des jeux
+* [x]  Choix des jeux
 * [ ]  Trouver les jeux automatiquement sur une clef usb
 
 **Hardware**
