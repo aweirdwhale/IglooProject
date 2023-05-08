@@ -10,7 +10,7 @@
 **Igloo Project** a pour ambition d'être la première console de jeux 100% open source, simple de contribution et instalable sur n'importe quel ordinateur avec python.
 
 
-##Comment ?
+## Comment ?
 En utilisant les technologies **React**, **Vite** et **Electron**.
 
 ## Roadmap
