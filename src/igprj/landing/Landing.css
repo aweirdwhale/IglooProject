@@ -1,0 +1,108 @@
+.App{
+    text-align: center;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    margin: 0 auto;
+    padding: 0 auto;
+    overflow: hidden;
+}
+
+.midHero{
+    width: 10em;
+    align-self: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    z-index: 1;
+}
+
+.hexagones{
+    align-self: center;
+    position: absolute;
+    top: -1%;
+    left: 0;
+    width: 100%;
+
+    z-index: 1;
+}
+
+.controls{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 1;
+}
+
+a{
+    z-index: 9;
+}
+
+.c1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1em;
+    height: 1em;
+    
+    transform: translate(-50%, -50%) scale(1);
+
+    border-radius: 50%;
+    border: 2px solid white;
+
+    animation: scaleCircle 15s infinite linear;
+}
+
+.c2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1em;
+    height: 1em;
+    
+    transform: translate(-50%, -50%) scale(1);
+
+    border-radius: 50%;
+    border: 2px solid white;
+
+    animation: scaleCircle 8s infinite linear;
+}
+
+.c3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1em;
+    height: 1em;
+    
+    transform: translate(-50%, -50%) scale(1);
+
+    border-radius: 50%;
+    border: 2px solid white;
+
+    animation: scaleCircle 3s infinite linear;
+}
+
+
+@keyframes scaleCircle{
+    0%{
+        width: 1em;
+        height: 1em;
+    }
+    100%{
+        width: 70em;
+        height: 70em;
+    }
+}

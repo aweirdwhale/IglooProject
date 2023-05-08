@@ -1,0 +1,30 @@
+{
+    "Tetris":{
+        "Name":"Tetris",
+        "Image":"https://media.discordapp.net/attachments/589402356735803392/1104861473081143376/tetris.png?width=436&height=662",
+        "path":"C:/Users/gouss/Desktop/!Dev/IglooPrj/igloo-project/src/assets/igprj/games/tetris.png",
+        "id":"0",
+        "Description":"Tetris met le joueur au défi de réaliser des lignes complètes en déplaçant des pièces de formes différentes, les tétrominos, qui défilent depuis le haut jusqu'au bas de l'écran. Les lignes complétées disparaissent tout en rapportant des points et le joueur peut de nouveau remplir les cases libérées."
+    },
+    "Pac-Man":{
+        "Name":"Pac-Man",
+        "Image":"https://media.discordapp.net/attachments/589402356735803392/1104861473605419138/pman.png?width=441&height=662",
+        "path":"C:/Users/gouss/Desktop/!Dev/IglooPrj/igloo-project/src/assets/igprj/games/pman.png",
+        "id":"2",
+        "Description":"Le jeu consiste à déplacer Pac-Man, un personnage qui, vu de profil, ressemble à un diagramme circulaire à l’intérieur d’un labyrinthe, afin de lui faire manger toutes les pac-gommes qui s’y trouvent en évitant d’être touché par des fantômes."
+    },
+    "Snake":{
+        "Name":"Street Fighter",
+        "Image":"https://i.etsystatic.com/12175780/r/il/419f29/1788757504/il_fullxfull.1788757504_dh4e.jpg",
+        "path":"C:/Windows/System32/notepad.exe",
+        "id":"3",
+        "Description":"Street Fighter est l'une des plus populaires séries de jeux vidéo de combat de l'histoire. Elle revendique une large communauté de joueurs et plus de soixante millions d’exemplaires de leurs jeux vendus, notamment grâce à l'opus phare de la série, Street Fighter II."
+    },
+    "Z":{
+        "Name":null,
+        "Image":null,
+        "path":null,
+        "id":null,
+        "Description":null
+    }
+}
