@@ -8,7 +8,7 @@ import {
 
 import Landing from './igprj/landing/Landing';
 import Play from './igprj/Play/Play2';
-import _Pacman from './igprj/Play/Pacman';
+import _Tetris from './igprj/tetris/tetris';
 
 const _Routes = () => {
   return (
@@ -16,7 +16,7 @@ const _Routes = () => {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/Play" element={<Play />} />
-        <Route path="/Play/Pacman" element={<_Pacman />} />
+        <Route path="/Play/Tetris" element={<_Tetris />} />
       </Routes>
     </BrowserRouter>
   );

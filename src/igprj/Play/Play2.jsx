@@ -4,7 +4,7 @@ import _buttons from "../buttons.json";
 import { useGamepads } from "react-gamepads";
 import { Link, useNavigate } from "react-router-dom";
 
-import goBack from "../../assets/igprj/gui/goback.png";
+import goBack from "../../assets/igprj/gui/goback_1.png";
 import header from "../../assets/igprj/gui/cmgamesheader.png";
 
 import "./Play.css";
@@ -66,7 +66,12 @@ function Play() {
                     setLogCount((logCount + 1) % 30); // Incrémenter le compteur et le réinitialiser après 80 frames
                   } else if(A) {
                     if(logCount === 0) {
-                        shell.openExternal(Object.values(games)[count].path);
+                        // shell.openExternal(Object.values(games)[count].path);
+                        if(Object.values(games)[count].path) {
+                            shell.openExternal(Object.values(games)[count].path);
+                        } else {
+                            navigate('/Play/Tetris');
+                        }
                     }
                     setLogCount((logCount + 1) % 30);
                   } else {

@@ -95,6 +95,9 @@ a{
     animation: scaleCircle 3s infinite linear;
 }
 
+.ctrl1 {
+    width: 100%;
+}
 
 @keyframes scaleCircle{
     0%{
