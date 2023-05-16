@@ -13,6 +13,7 @@ import _games from "./games.json"
 
 const { shell } = require('electron');
 
+
 function Play() {
 
 
@@ -70,7 +71,7 @@ function Play() {
                         if(Object.values(games)[count].path) {
                             shell.openExternal(Object.values(games)[count].path);
                         } else {
-                            navigate('/Play/Tetris');
+                            navigate('/Pong');
                         }
                     }
                     setLogCount((logCount + 1) % 30);
@@ -116,6 +117,7 @@ function Play() {
     if(gamepads[0]) {
         if(gamepads[0].buttons[_buttons.B].pressed) {
             navigate('/');
+
         }
     }
 
