@@ -3,19 +3,23 @@ import Update from '@/components/update'
 import './Landing.css'
 import centerHero from '../../assets/igprj/gui/midHero.png'
 import hexagones from '../../assets/igprj/gui/bglayer2_2.png'
-import ctrl1 from '../../assets/igprj/gui/ctrl1_2.png'
+import ac from '../../assets/igprj/gui/aidecredits.png'
+
+import Drops from '../../components/bgDrops/drops'
+
+import {GiGamepadCross} from 'react-icons/gi'
 
 import _buttons from '../buttons.json'
 import { useGamepads } from 'react-gamepads'
 import { Link, useNavigate } from 'react-router-dom'
 
 import song from '../../assets/igprj/songs/landing.wav'
+import { IconContext } from 'react-icons'
 export const audio = new Audio(song);
 
 
 function Landing() {
 
-    const [isGamepadConnected, setIsGamepadConnected] = useState(false)
     const [isPlaying, setIsPlaying] = useState(false)
 
     function playSong() {
@@ -45,53 +49,88 @@ function Landing() {
     // }, [])
 
     useEffect(() => {
+        playSong()
+        // audio.pause();
+
         if(gamepads[0]) {
-            if(gamepads[0].buttons[_buttons.BACK].pressed){
-                if (logCounty === 0) { // Afficher un log toutes les 80 frames
-                    setIsGamepadConnected(true)
-                }
-                setLogCounty((logCounty + 1) % 80); // Incrémenter le compteur et le réinitialiser après 80 frames
-            } else {
-                if(isGamepadConnected) {
-                    playSong()
-                    if(gamepads[0].buttons[_buttons.X].pressed) {
-                        if (logCounty === 0) { // Afficher un log toutes les 80 frames
-                            audio.pause();
-                            audio.currentTime = 0;
-                            navigate('/Play');
-                        }
-                        setLogCounty((logCounty + 1) % 80); // Incrémenter le compteur et le réinitialiser après 80 frames
+            
+                //bouton X
+                if(gamepads[0].buttons[_buttons.X].pressed) {
+                    if (logCounty === 0) { // Afficher un log toutes les 80 frames
+                        audio.pause();
+                        // audio.currentTime = 0;
+
+                        navigate('/Play');
                     }
+                    setLogCounty((logCounty + 1) % 80); // Incrémenter le compteur et le réinitialiser après 80 frames
+                }
+
+                //bouton Y
+                if(gamepads[0].buttons[_buttons.Y].pressed) {
+                    if (logCounty === 0) { // Afficher un log toutes les 80 frames
+                        audio.pause();
+                        // audio.currentTime = 0;
+                        
+                        navigate('/Help');
+                    }
+                    setLogCounty((logCounty + 1) % 80); // Incrémenter le compteur et le réinitialiser après 80 frames
+                }
+
+                //bouton A
+                if(gamepads[0].buttons[_buttons.A].pressed) {
+                    if (logCounty === 0) { // Afficher un log toutes les 80 frames
+                        audio.pause();
+                        // audio.currentTime = 0;
+                        
+                        navigate('/Credits');
+                    }
+                    setLogCounty((logCounty + 1) % 80); // Incrémenter le compteur et le réinitialiser après 80 frames
                 }
             }
-        }
-
-        
-        
     }, [gamepads, logCounty, navigate])
 
 
-        if (isGamepadConnected) {
-
+        if (gamepads[0]) {
             
+                return (
+                    <div className='App'>
+                        <img src={centerHero} className='midHero'/>
+                        <img src={hexagones} className='hexagones'/>
 
+                        <img src={ac} className="aides" />
+                        {/* <img src={controls} className='controls'/> */}
+                        {/* <div className="c1"></div>
+                        <div className="c2"></div>
+                        <div className="c3"></div>
+                        <div className="c4"></div> */}
 
-            return (
-                <div className='App'>
-                    <img src={centerHero} className='midHero'/>
-                    <img src={hexagones} className='hexagones'/>
-                    {/* <img src={controls} className='controls'/> */}
-                    <div className="c1"></div>
-                    <div className="c2"></div>
-                    <div className="c3"></div>
-                    <div className="c4"></div>
-                </div>
-            )
+                        <Drops  />
+                    </div>
+                )
+            
+            
         } else {
             return (
+                
+
                 <div className='App'>
-                    <img src={ctrl1} className='ctrl1' />
+                    <div class={gamepads[0] ? PopupHide : null} className='Popup'>
+                        <div  >
+                            <h1 >Aucun contrôleur trouvé</h1>
+                            <p >Connectez-en un et appuyez sur le bouton start.</p>
+                        </div>
+                        
+                        <GiGamepadCross size={'50px'}  id='PIcon'/>
+                    </div>
+                    <img src={centerHero} className='midHero'/>
+                    <img src={hexagones} className='hexagones'/>
+                    {/* <div className="c1"></div>
+                    <div className="c2"></div>
+                    <div className="c3"></div>
+                    <div className="c4"></div> */}
+                    <Drops  />
                 </div>
+
             )
         }
             

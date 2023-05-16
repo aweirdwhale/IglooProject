@@ -8,7 +8,11 @@ import {
 
 import Landing from './igprj/landing/Landing';
 import Play from './igprj/Play/Play2';
-import _Tetris from './igprj/tetris/tetris';
+import Help from './igprj/help/help'
+import Credits from './igprj/Credits/credits';
+import Drops from './components/bgDrops/drops';
+
+// import P from './igprj/builtingames/basicGame';
 
 const _Routes = () => {
   return (
@@ -16,7 +20,13 @@ const _Routes = () => {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/Play" element={<Play />} />
-        <Route path="/Play/Tetris" element={<_Tetris />} />
+        <Route path='/Help' element={<Help />} />
+        <Route path='/Credits' element={<Credits />} />
+
+        {/* <Route path='/Pong' element={<P />} /> */}
+
+        {/* dev */}
+        {/* <Route path='/' element={<Drops />} /> */}
       </Routes>
     </BrowserRouter>
   );

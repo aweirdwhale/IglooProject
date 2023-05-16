@@ -95,8 +95,18 @@ a{
     animation: scaleCircle 3s infinite linear;
 }
 
-.ctrl1 {
-    width: 100%;
+.aides{
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 20vh;
+
+    bottom: 0;
+    right: 0;
+
+    margin: 1.5em;
 }
 
 @keyframes scaleCircle{
@@ -108,4 +118,75 @@ a{
         width: 70em;
         height: 70em;
     }
+}
+
+.Popup{
+    position: absolute;
+    top: 0;
+    left: -3px;
+    width: calc(auto + 15px);
+    height: auto;
+
+    
+    margin-top: 20px;
+
+    background-color: rgba(255, 255, 255, 0.3);
+
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 2px solid white;
+
+    z-index: 10;
+
+    transition: 0.5s;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.PopupHide{
+    /* move all the block to the left in 0.5sec*/
+    transform: translateX(-100%);
+    transition: 0.5s;
+    /* display: none; */
+}
+
+.Popup h1 {
+    position: relative;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+
+    text-align: left;
+    padding-left: 10px;
+}
+
+.Popup p {
+    position: relative;
+    font-size: 0.7em;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+
+    text-align: left;
+    padding-left: 10px;
+}
+
+#PIcon{
+    position: relative;
+    top: 50%;
+    right: 0%;
+    
+    /* transform: translateX(50%); */
+
+    margin: 5%;
+    border-radius: 50%;
+    border: 2px solid white;
+
+    margin-right: 10px;
 }

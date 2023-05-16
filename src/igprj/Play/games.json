@@ -19,12 +19,6 @@
         "path":"C:/Windows/System32/notepad.exe",
         "id":"3",
         "Description":"Street Fighter est l'une des plus populaires séries de jeux vidéo de combat de l'histoire. Elle revendique une large communauté de joueurs et plus de soixante millions d’exemplaires de leurs jeux vendus, notamment grâce à l'opus phare de la série, Street Fighter II."
-    },
-    "Z":{
-        "Name":null,
-        "Image":null,
-        "path":null,
-        "id":null,
-        "Description":null
     }
+    
 }
