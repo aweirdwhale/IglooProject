@@ -4,7 +4,7 @@ import _buttons from "../buttons.json";
 import { useGamepads } from "react-gamepads";
 import { Link, useNavigate } from "react-router-dom";
 
-import goBack from "../../assets/igprj/gui/goback_1.png";
+import goBack from "../../assets/igprj/gui/goback.png";
 import header from "../../assets/igprj/gui/cmgamesheader.png";
 
 import "./Play.css";
@@ -71,7 +71,7 @@ function Play() {
                         if(Object.values(games)[count].path) {
                             shell.openExternal(Object.values(games)[count].path);
                         } else {
-                            navigate('/Pong');
+                            // navigate('/Pong');
                         }
                     }
                     setLogCount((logCount + 1) % 30);

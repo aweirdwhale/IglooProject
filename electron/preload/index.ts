@@ -32,6 +32,7 @@ const safeDOM = {
  * https://matejkustec.github.io/SpinThatShit
  */
 function useLoading() {
+  
   const className = `loaders-css__square-spin`
   const styleContent = `
 @keyframes square-spin {
@@ -76,6 +77,9 @@ function useLoading() {
     removeLoading() {
       safeDOM.remove(document.head, oStyle)
       safeDOM.remove(document.body, oDiv)
+
+      console.log('hehehe')
+
     },
   }
 }

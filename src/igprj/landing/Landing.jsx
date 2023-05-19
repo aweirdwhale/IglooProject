@@ -3,7 +3,7 @@ import Update from '@/components/update'
 import './Landing.css'
 import centerHero from '../../assets/igprj/gui/midHero.png'
 import hexagones from '../../assets/igprj/gui/bglayer2_2.png'
-import ac from '../../assets/igprj/gui/aidecredits.png'
+import ac from '../../assets/igprj/gui/aide.png'
 
 import Drops from '../../components/bgDrops/drops'
 
@@ -60,7 +60,7 @@ function Landing() {
                         audio.pause();
                         // audio.currentTime = 0;
 
-                        navigate('/Play');
+                        navigate('/Credits');
                     }
                     setLogCounty((logCounty + 1) % 80); // Incrémenter le compteur et le réinitialiser après 80 frames
                 }
@@ -82,7 +82,7 @@ function Landing() {
                         audio.pause();
                         // audio.currentTime = 0;
                         
-                        navigate('/Credits');
+                        navigate('/Play');
                     }
                     setLogCounty((logCounty + 1) % 80); // Incrémenter le compteur et le réinitialiser après 80 frames
                 }
