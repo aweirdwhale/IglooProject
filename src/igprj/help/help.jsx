@@ -1,4 +1,4 @@
-import ctrl1 from '../../assets/igprj/gui/ctrl1_4.png'
+import ctrl1 from '../../assets/igprj/gui/ctrl1_5.png'
 import './help.css'
 import React, { useState, useEffect } from 'react';
 

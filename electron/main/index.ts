@@ -3,6 +3,8 @@ import { release } from 'node:os'
 import { join } from 'node:path'
 import { update } from './update'
 
+
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 // The built directory structure
 //
 // ├─┬ dist-electron
@@ -41,12 +43,37 @@ const preload = join(__dirname, '../preload/index.js')
 const url = process.env.VITE_DEV_SERVER_URL
 const indexHtml = join(process.env.DIST, 'index.html')
 
+async function createloader() {
+  win = new BrowserWindow({
+    title: 'Loading...',
+    icon: join(process.env.DIST, 'logo.png'),
+    alwaysOnTop: true,
+    webPreferences: {
+      // preload,
+      // Warning: Enable nodeIntegration and disable contextIsolation is not secure in production
+      // Consider using contextBridge.exposeInMainWorld
+      // Read more on https://www.electronjs.org/docs/latest/tutorial/context-isolation
+      nodeIntegration: true,
+      contextIsolation: false,
+    },
+
+    frame: false,
+    movable: true,
+    autoHideMenuBar: true,
+    resizable: false,
+    width: 384,
+    height: 480,
+  })
+
+  win.loadFile('./load.html')
+}
+
 async function createWindow() {
   win = new BrowserWindow({
-    title: 'Main window',
+    title: 'Igloo Project',
     icon: join(process.env.PUBLIC, '../../src/assets/igprj/logo.png'),
     webPreferences: {
-      preload,
+      // preload,
       // Warning: Enable nodeIntegration and disable contextIsolation is not secure in production
       // Consider using contextBridge.exposeInMainWorld
       // Read more on https://www.electronjs.org/docs/latest/tutorial/context-isolation
@@ -85,7 +112,28 @@ async function createWindow() {
   update(win)
 }
 
-app.whenReady().then(createWindow)
+app.on('ready', () => {
+  createloader()
+
+
+
+  // win?.webContents.once('did-finish-load', () => {
+  //   win?.webContents.executeJavaScript(`console.log('preload is ready')`)
+
+  //   delay(1000)
+  // win?.close()
+  //   createWindow()
+  // })
+
+
+  setTimeout(() => {
+    win?.close()
+    createWindow()
+  }, 6500) //c'est un faux loader 🤪
+
+  
+  
+})
 
 app.on('window-all-closed', () => {
   win = null

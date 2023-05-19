@@ -17,7 +17,34 @@
 }
 
 
-.rain:nth-of-type(1){    
+.rain2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    position: absolute;
+}
+
+.rain2 > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+
+.rain2:nth-of-type(1){
+    transform: translate(0%, -100%);
+
+    /* take the perfect timming with the text apparition */
+    --duration: 3s;
+    --delay: 0s;
+}
+
+
+.rain:nth-of-type(1){
 	--duration: 4s;
 	--delay: 1.5s;
 }
@@ -33,6 +60,14 @@
 	--delay: 1s;
 	transform: translate(37%, -40%) scale(.3);
 }
+
+.rain:nth-of-type(4){
+    --duration:2s;
+    --delay: 1s;
+    transform: translate(-10%, 0) scale(.5);
+}
+
+
 
 
 .waves > div{
